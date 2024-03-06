@@ -1,26 +1,32 @@
 package candyshop;
+
 import java.util.*;
 
-public class CandyShops{
-    public int solution (int[] A, int[] B){
-        //Put the two arrays in a set to get rid off duplicates
-        Set<Integer>setA = new HashSet<>();
-        Set<Integer>setB = new HashSet<>();
+public class CandyShops {
 
-        for(int num: A){
-            setA.add(num);
-        }
-        for(int num: B){
-            setB.add(num);
-        }
-        //Since we want maximun, we count the  size of the two sets,
-        // then take the minimum count of the two, then multiply by 2 
-        int uniqueA = setA.size();
-        int uniqueB =  setB.size();
-
-        int minCountUnique = Math.min(uniqueA, uniqueB);
-
-        return minCountUnique *  2;
+    public static void main(String[] args) {
+        System.out.println(solution(new int[]{1, 2, 3, 4}, new int[]{3, 3, 3, 7}));
+        System.out.println(solution(new int[]{7, 4, 2, 5, 1, 2}, new int[]{2, 2, 2, 2, 2, 2}));
     }
-     
+
+    public static int solution(int[] A, int[] B) {
+        Set<Integer> setA = new HashSet<>();
+        Set<Integer> setB = new HashSet<>();
+        Set<Integer> setC = new HashSet<>();
+
+        for (int num : A) {
+            setA.add(num);
+            setC.add(num);
+        }
+
+        for (int num : B) {
+            setB.add(num);
+            setC.add(num);
+        }
+
+        return Math.min(
+                Math.min(setA.size(), A.length / 2 ) + Math.min(setB.size(), B.length / 2 ),
+                   setC.size() );
+    }
+
 }
