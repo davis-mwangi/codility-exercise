@@ -1,7 +1,12 @@
 package candyshop;
 
 import java.util.*;
+/*
+QUESTION : https://www.reddit.com/r/leetcode/comments/1b1bol4/candy_shops_coins_hard_greedy_apple/
+SIMILAR LEETCODE QUSN: https://leetcode.com/problems/maximum-size-of-a-set-after-removals/solutions/4520894/java-solution-using-hashset/
 
+A viable solution: https://www.youtube.com/watch?v=hHBAZrr7nPs
+ */
 public class CandyShops {
 
     public static void main(String[] args) {
